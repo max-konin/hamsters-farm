@@ -3,6 +3,10 @@
   <div>
     <img src={{model.avatarUrl}} data-test-avatar/>
   </div>
+
+  <div data-test-switch-state>
+    {{hamster-state-switcher currentState=model.state onChange=(action "changeState")}}
+  </div>
 </div>
 
 <div class="ui segment">

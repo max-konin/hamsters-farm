@@ -4,3 +4,12 @@
     <img src={{model.avatarUrl}} data-test-avatar/>
   </div>
 </div>
+
+<div class="ui segment">
+  <h3>Slaves</h3>
+  <ul>
+    {{#each model.slaves as |slave|}}
+      <li data-test-slave>{{slave.name}}</li>
+    {{/each}}
+  </ul>
+</div>

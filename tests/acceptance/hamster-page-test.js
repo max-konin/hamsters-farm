@@ -2,9 +2,9 @@ import { describe, it, beforeEach, afterEach } from 'mocha';
 import { expect } from 'chai';
 import startApp from 'hamsters-farm/tests/helpers/start-app';
 import destroyApp from 'hamsters-farm/tests/helpers/destroy-app';
-import { visit, find } from 'ember-native-dom-helpers';
+import { visit, find, findAll } from 'ember-native-dom-helpers';
 
-describe('Acceptance | cat page', function() {
+describe('Acceptance | hamster page', function() {
   let application;
 
   beforeEach(function() {
@@ -23,6 +23,9 @@ describe('Acceptance | cat page', function() {
     });
     it('renders an avatar', function () {
       expect(find('[data-test-avatar]')).to.exist;
+    });
+    it('renders list of slaves', function () {
+      expect(findAll('[data-test-slave]')).to.have.lengthOf(3);
     });
   });
 });

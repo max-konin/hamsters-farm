@@ -25,4 +25,5 @@ export default function() {
   */
 
   this.resource('hamster');
+  this.resource('human');
 }

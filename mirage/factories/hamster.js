@@ -7,5 +7,9 @@ export default Factory.extend({
   name() { return faker.name.firstName(); },
   fluffiness() { return faker.random.number({min: 0, max: 100}); },
   avatarUrl() { return faker.image.animals(100, 100, true); },
-  state: faker.list.random('hungry', 'evil', 'sleep')
+  state: faker.list.random('hungry', 'evil', 'sleep'),
+
+  afterCreate(hamster, server) {
+    server.createList('human', 3, { hamster });
+  }
 });

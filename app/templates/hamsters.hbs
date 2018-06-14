@@ -7,18 +7,13 @@
         <th>Name</th>
         <th>Weight</th>
         <th>Avatar</th>
+        <th>State</th>
         <th>Fluffiness</th>
       </tr>
     </thead>
     <tbody>
       {{#each model as |hamster|}}
-        <tr data-test-hamster>
-          <td>{{hamster.id}}</td>
-          <td>{{hamster.name}}</td>
-          <td>{{hamster.weight}}</td>
-          <td><img src={{hamster.avatarUrl}} class="ui mini rounded image"/></td>
-          <td>{{hamster.fluffiness}}</td>
-        </tr>
+        {{hamster-row hamster=hamster data-test-hamster=true}}
       {{/each}}
     </tbody>
   </table>
